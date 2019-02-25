@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+
+<!--
+
+https://github.com/mdn/webaudio-examples/blob/master/create-media-stream-destination/index.html
+http://www.softsynth.com/webaudio/gainramp.php
+https://seansleblanc.itch.io/pcm-tool
+https://countercomplex.blogspot.com/2011/10/algorithmic-symphonies-from-one-line-of.html
+
+-->
+<html>
+
+<head>
+	<title>pmc-sfx</title>
+</head>
+
+<body>
+	<p>
+		<button>Make</button>
+	</p>
+
+	<audio controls></audio>
+	<script>
+		//ADSR controls... TODO: open these up as modifiable parameters
+		const attackTime = 0.02;
+		const attackValue = 0.9;
+
+		const decayTime = 0.2;
+		const decayValue = 0.3;
+
+		const sustainTime = 0.5;
+
+		const releaseTime = 0.4;
+
+		let totalTime = 0;
+
+
+		//set sample rate
+		const t = 48000; //sample rate
+		const n = new(window.AudioContext || window.webkitAudioContext)({ //context
+			sampleRate: 48000
+		});
+		const o = n.createGain(); //player
+		//start at 0 volume
+		o.gain.setValueAtTime(0, 0);
+		//attack curve
+		o.gain.linearRampToValueAtTime(attackValue, totalTime + attackTime);
+		totalTime += attackTime;
+		//decay curve
+		o.gain.linearRampToValueAtTime(decayValue, totalTime + decayTime);
+		totalTime += decayTime;
+		//sustain
+		o.gain.linearRampToValueAtTime(decayValue, totalTime + sustainTime);
+		totalTime += sustainTime;
+		//release
+		o.gain.linearRampToValueAtTime(0, totalTime + releaseTime);
+		totalTime += releaseTime;
+
+		function a(q) {
+			q = q % Infinity;
+			return (Math.abs((q + 1) | (q + 2) * q) / (1000)) % 2 - 1;
+		};
+
+
+		//not needed
+		let i = 0;
+
+		function r() {
+			const e = n.createBufferSource();
+			e.connect(o);
+
+			// addTail --- adds a little extra space to the end of the buffer / file
+			const addTail = 0.3;
+			const r = n.createBuffer(1, (t * (totalTime + addTail)), n.sampleRate),
+				u = r.getChannelData(0);
+			console.log(
+				'begin sampling ----------------------------------------------------------------------------------------');
+			console.log('t=' + t);
+			for (let e = 0; e < (t * (totalTime + addTail)); ++e)
+				u[e] = a(i + e);
+			console.log('end sampling ----------------------------------------------------------------------------------------');
+			mediaRecorder.start();
+			e.buffer = r,
+				e.start(),
+				i += t; // not needed
+			console.log(r);
+			setTimeout(function () {
+				mediaRecorder.requestData();
+				mediaRecorder.stop();
+			}, ((totalTime + addTail) * 1000));
+		}
+
+
+
+
+		var b = document.querySelector("button");
+		var clicked = false;
+		var chunks = [];
+		var dest = n.createMediaStreamDestination();
+		var mediaRecorder = new MediaRecorder(dest.stream);
+		o.connect(dest);
+		b.addEventListener("click", function (e) {
+			if (!clicked) {
+				//setInterval(r, (totalTime * 1000));
+				r();
+				e.target.innerHTML = "Stop recording";
+				clicked = true;
+			} else {
+				mediaRecorder.requestData();
+				mediaRecorder.stop();
+				//clearInterval(r);
+				e.target.disabled = true;
+			}
+		});
+		mediaRecorder.ondataavailable = function (evt) {
+			console.log('end sampling ----------------------------------------------------------------------------------------');
+			// push each chunk (blobs) in an array
+			console.log(evt.data);
+			chunks.push(evt.data);
+		};
+		mediaRecorder.onstop = function (evt) {
+			// Make blob out of our blobs, and open it.
+			console.log(chunks);
+			var blob = new Blob(chunks, {
+				'type': 'audio/wav'
+			});
+			var audioTag = document.createElement('audio');
+			document.querySelector("audio").src = URL.createObjectURL(blob);
+		};
+	</script>
+</body>
+
+</html>
