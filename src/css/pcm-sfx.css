@@ -1,0 +1,165 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 1em;
+}
+
+html,
+body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #222;
+	color: #ddd;
+	font-family: sans-serif;
+}
+
+h1 {
+	text-align: center;
+	font-size: 1.3em;
+}
+
+hr {
+	height: 2px;
+	border: solid 1px #555;
+	border-radius: 20px;
+}
+
+button,
+#download {
+	padding: 1em;
+	border-radius: 5px;
+	border: 2px solid #ddd;
+	cursor: pointer;
+}
+
+button,
+audio {
+	display: block;
+	background-color: #444;
+	color: #ddd;
+}
+
+.section {
+	margin: 1em auto;
+}
+
+.control-param {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0.8em 0;
+	text-align: left;
+}
+
+.param-name {
+	width: 20%;
+	min-width: 70px;
+}
+
+.control-value {
+	width: 10%;
+	min-width: 35px;
+	text-align: right;
+}
+
+.control {
+	width: 65%;
+}
+
+a:link,
+a:hover,
+a:visited,
+.player > button {
+	color: #555;
+	text-decoration: none;
+	background-color: #ddd;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.content {
+	max-width: 100%;
+	width: 450px;
+	border: 2px solid #555;
+	border-radius: 5px;
+	padding: 1em;
+	background: #444
+}
+
+.section {
+	text-align: center;
+}
+
+.player {
+	border-radius: 20px;
+	border: 2px solid #ddd;
+	background-color: #ddd;
+	color: #555;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 0 auto;
+	width: 90%;
+}
+
+.player-control {
+	line-height: 0px;
+}
+
+.render-overlay {
+	text-align: center;
+}
+
+#play,
+#play-bar,
+#download {
+	border: 0;
+}
+
+#play,
+#download,
+#render {
+	display: inline-block;
+}
+
+#formula {
+	width: 78%;
+	font-size: 0.8em;
+	letter-spacing: 0.25em;
+	padding: 0.2em;
+}
+
+#audio-timer {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 65%;
+	height: 1em;
+	background: #555;
+	border-radius: 5px;
+}
+
+#audio-timer::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	height: 1em;
+	width: 1em;
+	background-color: #222;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+#audio-timer::-moz-range-thumb {
+	height: 1em;
+	width: 1em;
+	background-color: #222;
+	cursor: pointer;
+	border-radius: 5px;
+}
