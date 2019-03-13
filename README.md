@@ -46,5 +46,7 @@ If everything sounds good you can then hit the download arrow to save a local co
 
 * Invalid formula input crashes Firefox.
 * Attempting to render a sound with Dev Tools open in Chrome causes a soft crash.
+* WAVE file headers missing. This can cause the file to appear empty in some audio software.
+
 
 
