@@ -1,23 +1,23 @@
 {
-  "name": "pcm-sfx",
-  "version": "1.0.0",
-  "description": "a small tool for creating sound effects with pcm data",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "brandon thread",
-  "license": "MIT",
-  "devDependencies": {
-    "gulp": "^4.0.0"
-  },
-  "dependencies": {
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-clean-css": "^4.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-deporder": "^1.1.0",
-    "gulp-htmlclean": "^2.7.22",
-    "gulp-jsvalidate": "^4.0.0",
-    "gulp-uglifyes": "^0.2.1"
-  }
+	"name": "pcm-sfx",
+	"version": "1.0.0",
+	"description": "a small tool for creating sound effects with pcm data",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "brandon thread",
+	"license": "MIT",
+	"devDependencies": {
+		"gulp": "^4.0.0"
+	},
+	"dependencies": {
+		"gulp-autoprefixer": "^6.0.0",
+		"gulp-clean-css": "^4.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-deporder": "^1.1.0",
+		"gulp-htmlclean": "^2.7.22",
+		"gulp-jsvalidate": "^4.0.0",
+		"gulp-uglifyes": "^0.2.1"
+	}
 }

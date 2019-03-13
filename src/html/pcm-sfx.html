@@ -4,62 +4,83 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-	<meta name="description" content="">
+	<title>PCM-SFX</title>
+	<meta name="description" content="PCM sound effect generator">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Teko:300" rel="stylesheet">
 	<link rel="stylesheet" href="pcm-sfx.css">
 </head>
 
 <body>
 	<div class="content" aria-live="polite">
-		<div class="loading">
-			loading...
+		<div class="section">
+			<h1>PCM-SFX</h1>
 		</div>
-		<div class="app hidden">
-			<audio></audio>
-			<div class="section">
-				<h1>PCM-SFX</h1>
+		<div id="main" class="hidden">
+			<div class="section frow">
+				<div class="adsr-control">
+					<div class="adsr-curve" id="attack-type">
+						<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 100" class="adsr-svg">
+							<line class="atk-crv" x1="0" y1="100" x2="100" y2="0" />
+						</svg>
+					</div>
+					<input class="adsr-width adsr-time" type="number" step="0.01" title="attack time in seconds" id="attack-time">
+				</div>
+				<div class="adsr-control">
+					<div class="adsr-curve" id="decay-type">
+						<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 100" class="adsr-svg">
+							<line class="atk-crv" x1="102" y1="37" x2="-2" y2="0" />
+						</svg>
+					</div>
+					<input class="adsr-width adsr-time" type="number" step="0.01" title="decay time in seconds" id="decay-time">
+				</div>
+				<div class="adsr-control">
+					<div class="adsr-curve" id="decay-type">
+						<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 100" class="adsr-svg">
+							<line class="atk-crv" x1="102" y1="37" x2="-2" y2="37"></line>
+						</svg>
+					</div>
+					<div class="adsr-width frow">
+						<input class="adsr-width-half adsr-time" type="number" step="0.01" title="sustain time in seconds" id="sustain-time">
+						<input class="adsr-width-half adsr-time" type="number" step="1" title="sustain value in percent" id="sustain-value">
+					</div>
+				</div>
+				<div class="adsr-control">
+					<div class="adsr-curve" id="release-type">
+						<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 100" class="adsr-svg">
+							<line class="atk-crv" x1="102" y1="100" x2="-1" y2="37" />
+						</svg>
+					</div>
+					<input class="adsr-width adsr-time" type="number" step="0.01" title="release time in seconds" id="release-time">
+				</div>
 			</div>
-			<hr>
-			<div class="sound-controls section">
-				<div class="control-param">
-					<span class="param-name">attack</span>
-					<input class="control" type="range" id="attack" value="0.0" min="0" max="5" step="0.01" />
-					<span class="control-value" id="attack-value">1</span>
-				</div>
-				<div class="control-param">
-					<span class="param-name">decay</span>
-					<input class="control" type="range" id="decay" value="0.0" min="0" max="10" step="0.1" />
-					<span class="control-value" id="decay-value">1</span>
-				</div>
-				<div class="control-param">
-					<span class="param-name">sustain</span>
-					<input class="control" type="range" id="sustain" value="0.0" min="0" max="15" step="0.1" />
-					<span class="control-value" id="sustain-value">10</span>
-				</div>
-				<div class="control-param">
-					<span class="param-name">release</span>
-					<input class="control" type="range" id="release" value="0.0" min="0" max="10" step="0.1" />
-					<span class="control-value" id="release-value">1</span>
-				</div>
-				<hr>
-				<div class="control-param">
-					<span class="param-name">formula</span>
-					<input type="text" id="formula" />
-				</div>
-				<hr>
+			<div class="section fcol-m">
+				<label for="formula">FORMULA</label>
+				<input id="formula" type="text" title="PCM formula - accepts math operators and js numerical returns.&#013;Make sure to add 'c' to your formula for decent results!" />
 			</div>
-			<div class="player section hidden">
-				<button class="player-control" id="play" name="play sound">&#x25B6; PLAY</button>
-				<a href="" class="player-control" id="download" title="download your sound">&#x2b07; DOWNLOAD</a>
-			</div>
-			<div class="section">
-				<button name="render new sound" id="render">BUILD SOUND</button>
+			<div class="section frow">
+				<button class="pbd" title="play your sound" id="play">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136.5 158.74" class="play-svg">
+						<polygon class="shape" points="1.51 0.87 0.51 157.87 135.51 78.87 1.51 0.87" />
+					</svg>
+				</button>
+				<button class="pbd" title="render your sound for play and download" id="render">BUILD</button>
+				<a class="pbd" title="download your sound" href="#" id="download">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 149" class="play-svg">
+						<polygon class="shape" points="55.5 0.5 55.5 58.97 30.5 58.97 75.5 113 120.5 58.97 95.5 58.97 95.5 0.5 75.5 0.5 55.5 0.5" />
+						<rect class="shape" x="0.5" y="130.5" width="149" height="18" />
+					</svg>
+				</a>
 			</div>
 		</div>
-		<div class="render-overlay hidden">
-			rendering sound...
+		<div id="loading" class="">
+			<div id="no-js">This app requires javascript to function!</div>
+			<button id="load" class="pbd hidden" title="load app">LAUNCH</button>
 		</div>
+		<div id="rendering" class="hidden">
+			RENDERING...
+		</div>
+		<audio id="audio"></audio>
 	</div>
 	<script src="pcm-sfx.js" async defer></script>
 </body>
