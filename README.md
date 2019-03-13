@@ -6,13 +6,13 @@ Create and download pulse-code modulation (PCM) sound effects (SFX) from the com
 
 ## Using PCM-SFX
 
-This app allows you to create sfx using a formula and a Attack-Decay-Sustain-Release ([adsr](https://www.wikiaudio.org/adsr-envelope/)) envelope.
+This app allows you to create sfx using a formula and an Attack-Decay-Sustain-Release ([adsr](https://www.wikiaudio.org/adsr-envelope/)) envelope.
 
 ### The ADSR Envelope
 
-Each section of the adsr envelope has a time input that defines how long in seconds it should take to reach its target value. This value can be any int or float that is greater than or equal to zero.
+Each section of the adsr envelope has a time input that defines how long in seconds it should take to reach its target value. This time value can be any int or float that is greater than or equal to zero.
 
-The sustain section of the envelope has a value input as well. This input defines the target volume as a percentage of the total volume of the attack target value.
+The sustain section of the envelope has a volume value input as well. This input defines the target volume as a percentage of the total volume of the attack target value (full volume).
 
 ### The Formula
 
@@ -26,7 +26,7 @@ The pcm sampler uses the variable 'c' to store sample array data. You should use
 
 Once you have configured your adsr envelope and your pcm formula, you will want to BUILD your sound. This renders your sound to a playable and downloadable WAVE file.
 
-After rendering your sound you can hit the play arrow to preview!
+After rendering your sound you can hit the play arrow to listen to a preview!
 
 If everything sounds good you can then hit the download arrow to save a local copy as a WAVE file to your device.
 
@@ -44,7 +44,7 @@ If everything sounds good you can then hit the download arrow to save a local co
 
 ## Known Issues
 
-* Invalid formula input crashes in Firefox.
+* Invalid formula input crashes Firefox.
 * Attempting to render a sound with Dev Tools open in Chrome causes a soft crash.
 
 
