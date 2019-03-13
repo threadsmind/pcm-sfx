@@ -1,8 +1,10 @@
-# pcm-sfx
+# Create Free Sound Effects with PCM-SFX
 
 Create and download pulse-code modulation (PCM) sound effects (SFX) from the comfort of your browser!
 
-## Using pcm-sfx
+&nbsp;
+
+## Using PCM-SFX
 
 This app allows you to create sfx using a formula and a Attack-Decay-Sustain-Release ([adsr](https://www.wikiaudio.org/adsr-envelope/)) envelope.
 
@@ -28,6 +30,8 @@ After rendering your sound you can hit the play arrow to preview!
 
 If everything sounds good you can then hit the download arrow to save a local copy as a WAVE file to your device.
 
+&nbsp;
+
 ## Inspiration
 
 [https://seansleblanc.itch.io/pcm-tool](https://seansleblanc.itch.io/pcm-tool)
@@ -35,6 +39,8 @@ If everything sounds good you can then hit the download arrow to save a local co
 [https://countercomplex.blogspot.com/2011/10/algorithmic-symphonies-from-one-line-of.html](https://countercomplex.blogspot.com/2011/10/algorithmic-symphonies-from-one-line-of.html)
 
 [http://www.drpetter.se/project_sfxr.html](http://www.drpetter.se/project_sfxr.html)
+
+&nbsp;
 
 ## Known Issues
 
