@@ -2,7 +2,7 @@
 
 Create and download pulse-code modulation (PCM) sound effects (SFX) from the comfort of your browser!
 
-&nbsp;
+Play with it here: [PCM-SFX](https://brandonmakesthings.itch.io/pcm-sfx)
 
 ## Using PCM-SFX
 
