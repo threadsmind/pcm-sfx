@@ -1,9 +1,10 @@
 import { Box, Typography } from '@material-ui/core';
 import React from 'react';
+import content from '../utils/content';
 
 const ActionButtons = () => (
   <Box>
-    <Typography>Action Buttons</Typography>
+    <Typography>{content.actionButtons}</Typography>
   </Box>
 );
 

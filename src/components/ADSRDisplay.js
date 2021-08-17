@@ -1,9 +1,10 @@
 import { Box, Typography } from '@material-ui/core';
 import React from 'react';
+import content from '../utils/content';
 
 const ADSRDisplay = () => (
     <Box>
-      <Typography>ADSR Display</Typography>
+      <Typography>{content.adsrDisplay}</Typography>
     </Box>
   );
 
