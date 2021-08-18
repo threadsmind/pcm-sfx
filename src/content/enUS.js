@@ -4,10 +4,13 @@
 const enUS = {
   'en-US': {
     appTitle: 'PCM-SFX',
+    formula: {
+      title: 'Formula',
+      inputLabel: 'PCM formula input'
+    },
     adsrDisplay: 'ADSR Display',
-    formula: 'Formula',
     actionButtons: 'Action Buttons'
   }
-}
+};
 
 export default enUS;
