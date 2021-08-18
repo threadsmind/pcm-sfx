@@ -9,7 +9,10 @@ const enUS = {
       inputLabel: 'PCM formula input'
     },
     adsrDisplay: 'ADSR Display',
-    actionButtons: 'Action Buttons'
+    actionButtons: {
+      playLabel: 'Play Sound',
+      downloadLabel: 'Download Sound'
+    }
   }
 };
 
