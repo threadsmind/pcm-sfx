@@ -15,7 +15,9 @@ const StyledGrid = styled(Grid)(
 const DisplayBox = ({ children }) => (
   <StyledGrid container spacing={4} direction="column">
     {children.map((child) => (
-      <Grid item>{child}</Grid>
+      <Grid item key={child.type.name}>
+        {child}
+      </Grid>
     ))}
   </StyledGrid>
 );
