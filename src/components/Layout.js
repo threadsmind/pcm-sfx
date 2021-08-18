@@ -1,17 +1,24 @@
-import { Box, Typography } from '@material-ui/core';
 import React from 'react';
-import ADSRDisplay from './ADSRDisplay';
-import Formula from './Formula';
-import ActionButtons from './ActionButtons';
-import content from '../utils/content';
+import ADSRDisplay from '@/ADSRDisplay';
+import Formula from '@/Formula';
+import AppTitle from '@/AppTitle';
+import ActionButtons from '@/ActionButtons';
+import AppContainer from '@/AppContainer';
+import DisplayBox from '@/DisplayBox';
 
+/**
+ * Main app layout
+ * @returns {JSX.Element} App layout component
+ */
 const Layout = () => (
-  <Box>
-    <Typography variant="h1">{content.appTitle}</Typography>
-    <ADSRDisplay />
-    <Formula />
-    <ActionButtons />
-  </Box>
+  <AppContainer>
+    <DisplayBox>
+      <AppTitle />
+      <ADSRDisplay />
+      <Formula />
+      <ActionButtons />
+    </DisplayBox>
+  </AppContainer>
 );
 
 export default Layout;
