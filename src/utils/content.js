@@ -1,4 +1,4 @@
-import enUS from '../content/enUS';
+import enUS from 'content/enUS';
 
 const languageDefault = 'en-US';
 const languageOptions = {
@@ -11,7 +11,7 @@ const languageOptions = {
  */
 export const getContent = () => {
   if (!navigator?.language) return languageOptions[languageDefault];
-  return languageOptions[navigator.language] || languageOptions[languageDefault]
+  return languageOptions[navigator.language] || languageOptions[languageDefault];
 };
 
 /**

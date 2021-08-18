@@ -5,10 +5,10 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import theme from './theme';
 
 const App = () => (
-    <MuiThemeProvider theme={theme}>
-      <CssBaseline />
-      <Layout />
-    </MuiThemeProvider>
-  );
+  <MuiThemeProvider theme={theme}>
+    <CssBaseline />
+    <Layout />
+  </MuiThemeProvider>
+);
 
 export default App;
