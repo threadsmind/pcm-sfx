@@ -10,8 +10,9 @@ const enUS = {
     },
     adsrDisplay: 'ADSR Display',
     actionButtons: {
-      playLabel: 'Play Sound',
-      downloadLabel: 'Download Sound'
+      playLabel: 'Play',
+      downloadLabel: 'Download',
+      labelContext: 'Sound'
     }
   }
 };
