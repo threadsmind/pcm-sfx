@@ -8,7 +8,14 @@ const enUS = {
       title: 'Formula',
       inputLabel: 'PCM formula input'
     },
-    adsrDisplay: 'ADSR Display',
+    adsrDisplay: {
+      attack: 'Attack',
+      decay: 'Decay',
+      sustain: 'Sustain',
+      release: 'Release',
+      duration: 'Duration in Seconds',
+      volume: 'Volume Percent'
+    },
     actionButtons: {
       playLabel: 'Play',
       downloadLabel: 'Download',

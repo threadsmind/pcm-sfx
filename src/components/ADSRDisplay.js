@@ -1,11 +1,14 @@
-import { Box, Typography } from '@material-ui/core';
 import React from 'react';
-import content from 'utils/content';
+import AdsrGrid from 'comps/AdsrGrid';
+import AdsrControl from 'comps/AdsrControl';
 
-const ADSRDisplay = () => (
-    <Box>
-      <Typography>{content.adsrDisplay}</Typography>
-    </Box>
-  );
+const AdsrDisplay = () => (
+  <AdsrGrid>
+    <AdsrControl type="attack" />
+    <AdsrControl type="decay" />
+    <AdsrControl type="sustain" />
+    <AdsrControl type="release" />
+  </AdsrGrid>
+);
 
 export default AdsrDisplay;
