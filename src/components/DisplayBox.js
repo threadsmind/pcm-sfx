@@ -2,12 +2,16 @@ import Grid from '@material-ui/core/Grid';
 import { styled } from '@material-ui/core/styles';
 import React from 'react';
 
+import theme from '../theme';
+
 const StyledGrid = styled(Grid)(
   ({ theme }) => ({
     width: '800px',
     maxWidth: '100%',
     border: `2px solid ${theme.palette.primary.light}`,
-    padding: theme.spacing(1)
+    [theme.breakpoints.up('sm')]: {
+      padding: theme.spacing(1),
+    }
   }),
   { name: 'DisplayBox' }
 );
