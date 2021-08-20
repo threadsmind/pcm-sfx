@@ -8,7 +8,7 @@ const StyledGrid = styled(Grid)(
     maxWidth: '100%',
     border: `2px solid ${theme.palette.primary.light}`,
     [theme.breakpoints.up('sm')]: {
-      padding: theme.spacing(1),
+      padding: theme.spacing(1)
     }
   }),
   { name: 'DisplayBox' }

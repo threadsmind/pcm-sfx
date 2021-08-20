@@ -17,24 +17,15 @@ const ActionButtons = () => {
   const buttonWidth = isMobile ? 12 : 3;
 
   return (
-    <Grid
-      container
-      justifyContent="center"
-      spacing={3}
-      direction={isMobile ? 'column' : 'row'
-    }>
+    <Grid container justifyContent="center" spacing={3} direction={isMobile ? 'column' : 'row'}>
       <Grid item sm={buttonWidth}>
-        <StyledButton variant="outlined">
-          {content.actionButtons.playLabel}
-        </StyledButton>
+        <StyledButton variant="outlined">{content.actionButtons.playLabel}</StyledButton>
       </Grid>
       <Grid item sm={buttonWidth}>
-        <StyledButton variant="outlined">
-          {content.actionButtons.downloadLabel}
-        </StyledButton>
+        <StyledButton variant="outlined">{content.actionButtons.downloadLabel}</StyledButton>
       </Grid>
     </Grid>
-  )
+  );
 };
 
 export default ActionButtons;
