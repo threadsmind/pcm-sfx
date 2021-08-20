@@ -1,8 +1,8 @@
 import React from 'react';
-import Layout from './components/Layout';
+import Layout from 'comps/Layout';
 import { CssBaseline } from '@material-ui/core';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import theme from './theme';
+import theme from '@/theme';
 
 const App = () => (
   <MuiThemeProvider theme={theme}>

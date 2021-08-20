@@ -12,7 +12,8 @@ module.exports = {
       react: path.join(__dirname, 'node_modules', 'react'),
       utils: path.resolve(__dirname, 'src/utils/'),
       content: path.resolve(__dirname, 'src/content/'),
-      '@': path.resolve(__dirname, 'src/components/')
+      comps: path.resolve(__dirname, 'src/components/'),
+      '@': path.resolve(__dirname, 'src/')
     }
   },
   module: {

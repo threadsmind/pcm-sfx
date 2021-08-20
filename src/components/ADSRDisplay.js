@@ -1,6 +1,6 @@
 import { Box, Typography } from '@material-ui/core';
 import React from 'react';
-import content from '../utils/content';
+import content from 'utils/content';
 
 const ADSRDisplay = () => (
     <Box>
@@ -8,4 +8,4 @@ const ADSRDisplay = () => (
     </Box>
   );
 
-export default ADSRDisplay;
+export default AdsrDisplay;

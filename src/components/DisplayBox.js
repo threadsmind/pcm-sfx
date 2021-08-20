@@ -2,8 +2,6 @@ import Grid from '@material-ui/core/Grid';
 import { styled } from '@material-ui/core/styles';
 import React from 'react';
 
-import theme from '../theme';
-
 const StyledGrid = styled(Grid)(
   ({ theme }) => ({
     width: '800px',

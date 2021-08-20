@@ -1,10 +1,10 @@
 import React from 'react';
-import ADSRDisplay from '@/ADSRDisplay';
-import Formula from '@/Formula';
-import AppTitle from '@/AppTitle';
-import ActionButtons from '@/ActionButtons';
-import AppContainer from '@/AppContainer';
-import DisplayBox from '@/DisplayBox';
+import AdsrDisplay from 'comps/AdsrDisplay';
+import Formula from 'comps/Formula';
+import AppTitle from 'comps/AppTitle';
+import ActionButtons from 'comps/ActionButtons';
+import AppContainer from 'comps/AppContainer';
+import DisplayBox from 'comps/DisplayBox';
 
 /**
  * Main app layout
@@ -14,7 +14,7 @@ const Layout = () => (
   <AppContainer>
     <DisplayBox>
       <AppTitle />
-      <ADSRDisplay />
+      <AdsrDisplay />
       <Formula />
       <ActionButtons />
     </DisplayBox>
