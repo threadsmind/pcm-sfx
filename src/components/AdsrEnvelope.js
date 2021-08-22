@@ -1,5 +1,6 @@
 import { Slider, Grid } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
+import Linear from '@/svg/Linear';
 import React from 'react';
 
 const EnvelopeContainer = styled(Grid)(
@@ -38,7 +39,7 @@ const StyledSlider = styled(Slider)(
 );
 
 const AdsrEnvelope = ({ type, classes }) => {
-  console.log(classes);
+  const value = 30;
 
   return (
     <EnvelopeContainer className={classes.border}>
@@ -46,11 +47,11 @@ const AdsrEnvelope = ({ type, classes }) => {
         <StyledSlider
           orientation="vertical"
           // getAriaValueText={valuetext}
-          defaultValue={30}
+          defaultValue={value}
           aria-labelledby="vertical-slider"
         />
       ) : (
-        <>{type}</>
+        <Linear type={type} value={value} />
       )}
     </EnvelopeContainer>
   );
