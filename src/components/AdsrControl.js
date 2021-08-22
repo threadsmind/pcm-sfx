@@ -12,17 +12,6 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const EnvelopeContainer = styled(Grid)(
-  () => ({
-    height: 120,
-    '& .MuiSlider-root.MuiSlider-vertical': {
-      width: '100%',
-      padding: 0
-    }
-  }),
-  { name: 'EnvelopeContainer' }
-);
-
 const InputContainer = styled(Grid)(
   () => ({
     height: '3rem'
@@ -44,9 +33,7 @@ const AdsrControl = ({ type }) => {
 
   return (
     <>
-      <EnvelopeContainer item className={classes.border}>
-        <AdsrEnvelope type={type} />
-      </EnvelopeContainer>
+      <AdsrEnvelope type={type} classes={{ ...classes }} />
       <InputContainer item>
         <AdsrInput
           inputProps={{ 'aria-label': `${adsrContent[type]} ${adsrContent.duration}` }}

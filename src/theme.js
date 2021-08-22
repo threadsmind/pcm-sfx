@@ -35,7 +35,7 @@ const theme = createTheme({
   },
   overrides: {
     MuiSlider: {
-      'vertical & root': {width: '100%'}
+      'vertical & root': { width: '100%' }
     }
   }
 });

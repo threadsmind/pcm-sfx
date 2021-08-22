@@ -1,9 +1,20 @@
-import { Slider } from '@material-ui/core';
+import { Slider, Grid } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
 import React from 'react';
 
+const EnvelopeContainer = styled(Grid)(
+  () => ({
+    height: 120,
+    '& .MuiSlider-root.MuiSlider-vertical': {
+      width: '100%',
+      padding: 0
+    }
+  }),
+  { name: 'EnvelopeContainer' }
+);
+
 const StyledSlider = styled(Slider)(
-  ({theme}) => ({
+  ({ theme }) => ({
     color: theme.palette.secondary.main,
     '& .MuiSlider-rail, & .MuiSlider-track': {
       width: '100%'
@@ -23,18 +34,26 @@ const StyledSlider = styled(Slider)(
       height: 6
     }
   }),
-  {name: 'StyledSlider'}
+  { name: 'StyledSlider' }
 );
 
-const AdsrEnvelope = ({type}) => {
-  return type === 'sustain' ? (
-  <StyledSlider
-    orientation="vertical"
-    // getAriaValueText={valuetext}
-    defaultValue={30}
-    aria-labelledby="vertical-slider"
-  />
-) : <>{type}</>
+const AdsrEnvelope = ({ type, classes }) => {
+  console.log(classes);
+
+  return (
+    <EnvelopeContainer className={classes.border}>
+      {type === 'sustain' ? (
+        <StyledSlider
+          orientation="vertical"
+          // getAriaValueText={valuetext}
+          defaultValue={30}
+          aria-labelledby="vertical-slider"
+        />
+      ) : (
+        <>{type}</>
+      )}
+    </EnvelopeContainer>
+  );
 };
 
 export default AdsrEnvelope;
