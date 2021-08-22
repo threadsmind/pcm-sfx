@@ -32,11 +32,6 @@ const theme = createTheme({
         fontWeight: 700
       }
     }
-  },
-  overrides: {
-    MuiSlider: {
-      'vertical & root': { width: '100%' }
-    }
   }
 });
 
