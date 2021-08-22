@@ -3,6 +3,7 @@ import { Grid, Box, Input } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { styled } from '@material-ui/core/styles';
 import content from 'utils/content';
+import AdsrEnvelope from 'comps/AdsrEnvelope';
 
 const useStyles = makeStyles((theme) => ({
   border: {
@@ -13,7 +14,11 @@ const useStyles = makeStyles((theme) => ({
 
 const EnvelopeContainer = styled(Grid)(
   () => ({
-    height: 120
+    height: 120,
+    '& .MuiSlider-root.MuiSlider-vertical': {
+      width: '100%',
+      padding: 0
+    }
   }),
   { name: 'EnvelopeContainer' }
 );
@@ -40,7 +45,7 @@ const AdsrControl = ({ type }) => {
   return (
     <>
       <EnvelopeContainer item className={classes.border}>
-        <Box>SVG</Box>
+        <AdsrEnvelope type={type} />
       </EnvelopeContainer>
       <InputContainer item>
         <AdsrInput

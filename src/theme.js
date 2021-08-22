@@ -8,6 +8,9 @@ const theme = createTheme({
       light: common.white,
       main: common.black
     },
+    secondary: {
+      main: '#dedede'
+    },
     error: {
       main: red.A400
     },
@@ -28,6 +31,11 @@ const theme = createTheme({
       '& strong, & b': {
         fontWeight: 700
       }
+    }
+  },
+  overrides: {
+    MuiSlider: {
+      'vertical & root': {width: '100%'}
     }
   }
 });
