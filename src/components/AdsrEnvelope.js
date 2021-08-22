@@ -38,6 +38,8 @@ const StyledSlider = styled(Slider)(
   { name: 'StyledSlider' }
 );
 
+const valueText = (value) => `${value}%`;
+
 const AdsrEnvelope = ({ type, classes }) => {
   const value = 30;
 
@@ -46,7 +48,7 @@ const AdsrEnvelope = ({ type, classes }) => {
       {type === 'sustain' ? (
         <StyledSlider
           orientation="vertical"
-          // getAriaValueText={valuetext}
+          getAriaValueText={valuetext}
           defaultValue={value}
           aria-labelledby="vertical-slider"
         />
