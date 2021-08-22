@@ -48,7 +48,7 @@ const AdsrEnvelope = ({ type, classes }) => {
       {type === 'sustain' ? (
         <StyledSlider
           orientation="vertical"
-          getAriaValueText={valuetext}
+          getAriaValueText={valueText}
           defaultValue={value}
           aria-labelledby="vertical-slider"
         />
