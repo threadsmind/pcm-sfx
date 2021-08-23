@@ -22,13 +22,11 @@ The pcm sampler uses the variable 'c' to store sample array data. You should use
 
 **Note** At the moment, invalid formula input can result in a crash when using this app in Firefox.
 
-### Rendering, Playing, and Downloading
+### Playing & Downloading
 
-Once you have configured your adsr envelope and your pcm formula, you will want to BUILD your sound. This renders your sound to a playable and downloadable WAVE file.
+When using the controls to configure the ADSR envelope and PCM formula, your sound will automatically re-render. Simply press the "Play" button to preview your changes.
 
-After rendering your sound you can hit the play arrow to listen to a preview!
-
-If everything sounds good you can then hit the download arrow to save a local copy as a WAVE file to your device.
+If everything sounds good, you can press the "Download" button to save a copy of the sound as a ".wav" file to your device.
 
 &nbsp;
 
