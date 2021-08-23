@@ -1,8 +1,9 @@
 import { Slider, Grid } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
 import Linear from '@/svg/Linear';
-import React from 'react';
+import React, { useContext } from 'react';
 import content from 'utils/content';
+import { PcmDataContext } from '@/context/PcmDataContext';
 
 const EnvelopeContainer = styled(Grid)(
   () => ({
@@ -42,7 +43,7 @@ const StyledSlider = styled(Slider)(
 const valueText = (value) => `${value}%`;
 
 const AdsrEnvelope = ({ type, classes }) => {
-  const value = 30;
+  const { sustainVolume, setSustainVolume, DEFAULT_VALUE } = useContext(PcmDataContext);
   const adsrContent = content.adsrDisplay;
 
   return (
@@ -51,11 +52,14 @@ const AdsrEnvelope = ({ type, classes }) => {
         <StyledSlider
           orientation="vertical"
           getAriaValueText={valueText}
-          defaultValue={value}
+          defaultValue={DEFAULT_VALUE}
           aria-label={`${adsrContent[type]} ${adsrContent.volume}`}
+          onChange={(_, newValue) => {
+            setSustainVolume(newValue);
+          }}
         />
       ) : (
-        <Linear type={type} value={value} />
+        <Linear type={type} value={sustainVolume} />
       )}
     </EnvelopeContainer>
   );
