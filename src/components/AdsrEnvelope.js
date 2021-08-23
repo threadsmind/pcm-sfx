@@ -8,6 +8,7 @@ import { PcmDataContext } from '@/context/PcmDataContext';
 const EnvelopeContainer = styled(Grid)(
   () => ({
     height: 120,
+    paddingTop: 5,
     '& .MuiSlider-root.MuiSlider-vertical': {
       width: '100%',
       padding: 0
@@ -19,6 +20,7 @@ const EnvelopeContainer = styled(Grid)(
 const StyledSlider = styled(Slider)(
   ({ theme }) => ({
     color: theme.palette.secondary.main,
+    padding: 5,
     '& .MuiSlider-rail, & .MuiSlider-track': {
       width: '100%'
     },
@@ -32,7 +34,7 @@ const StyledSlider = styled(Slider)(
       color: theme.palette.primary.main,
       width: '100%',
       marginLeft: 0,
-      marginTop: -3,
+      marginBottom: -3,
       borderRadius: 0,
       height: 6
     }

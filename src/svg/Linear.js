@@ -31,6 +31,7 @@ const Linear = ({ type, value }) => {
         x2={coords.x2}
         y2={coords.y2}
         strokeWidth="5px"
+        strokeLinecap="square"
         stroke={theme.palette.primary.main}
       />
     </StyledSvg>
