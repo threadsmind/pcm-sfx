@@ -42,8 +42,6 @@ const StyledSlider = styled(Slider)(
   { name: 'StyledSlider' }
 );
 
-const valueText = (value) => `${value}%`;
-
 const AdsrEnvelope = ({ type, classes }) => {
   const { sustainVolume, setSustainVolume, DEFAULT_VALUE } = useContext(PcmDataContext);
   const adsrContent = content.adsrDisplay;
@@ -53,7 +51,7 @@ const AdsrEnvelope = ({ type, classes }) => {
       {type === 'sustain' ? (
         <StyledSlider
           orientation="vertical"
-          getAriaValueText={valueText}
+          getAriaValueText={(value) => `${value}%`}
           defaultValue={DEFAULT_VALUE}
           aria-label={`${adsrContent[type]} ${adsrContent.volume}`}
           onChange={(_, newValue) => {
