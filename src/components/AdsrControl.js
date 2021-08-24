@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Grid, Input } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { styled } from '@material-ui/core/styles';
 import content from 'utils/content';
 import AdsrEnvelope from 'comps/AdsrEnvelope';
+import { PcmDataContext } from '@/context/PcmDataContext';
 
 const useStyles = makeStyles((theme) => ({
   border: {
@@ -29,6 +30,7 @@ const AdsrInput = styled(Input)(
 
 const AdsrControl = ({ type }) => {
   const classes = useStyles();
+  const { DEFAULTS, setValues } = useContext(PcmDataContext);
   const adsrContent = content.adsrDisplay;
 
   return (
@@ -36,10 +38,15 @@ const AdsrControl = ({ type }) => {
       <AdsrEnvelope type={type} classes={{ ...classes }} />
       <InputContainer item>
         <AdsrInput
-          inputProps={{ 'aria-label': `${adsrContent[type]} ${adsrContent.duration}` }}
+          inputProps={{
+            'aria-label': `${adsrContent[type]} ${adsrContent.duration}`,
+            min: 0,
+            step: 0.1
+          }}
           className={classes.border}
           type="number"
-          value="0"
+          defaultValue={DEFAULTS[type]}
+          onChange={(e) => setValues(type, e.target.value)}
         />
       </InputContainer>
     </>
