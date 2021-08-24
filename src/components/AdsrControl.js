@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Box, Input } from '@material-ui/core';
+import { Grid, Input } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { styled } from '@material-ui/core/styles';
 import content from 'utils/content';
