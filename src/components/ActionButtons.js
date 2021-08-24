@@ -1,6 +1,7 @@
 import { Button, Grid, useMediaQuery } from '@material-ui/core';
 import { styled, useTheme } from '@material-ui/core/styles';
-import React from 'react';
+import { PcmDataContext } from '@/context/PcmDataContext';
+import React, { useContext } from 'react';
 import content from 'utils/content';
 
 const StyledButton = styled(Button)(
@@ -14,12 +15,22 @@ const StyledButton = styled(Button)(
 const ActionButtons = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
+  const { duration, sustainVolume } = useContext(PcmDataContext);
   const buttonWidth = isMobile ? 12 : 3;
+
+  const handlePlay = (e) => {
+    e.preventDefault();
+    console.log(duration, sustainVolume);
+  };
 
   return (
     <Grid container justifyContent="center" spacing={3} direction={isMobile ? 'column' : 'row'}>
       <Grid item sm={buttonWidth}>
-        <StyledButton variant="outlined">{content.actionButtons.playLabel}</StyledButton>
+        <form onSubmit={handlePlay}>
+          <StyledButton type="submit" variant="outlined">
+            {content.actionButtons.playLabel}
+          </StyledButton>
+        </form>
       </Grid>
       <Grid item sm={buttonWidth}>
         <StyledButton variant="outlined">{content.actionButtons.downloadLabel}</StyledButton>
