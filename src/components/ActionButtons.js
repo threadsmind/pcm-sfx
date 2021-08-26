@@ -15,12 +15,12 @@ const StyledButton = styled(Button)(
 const ActionButtons = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
-  const { duration, sustainVolume } = useContext(PcmDataContext);
+  const { duration, sustainVolume, formula } = useContext(PcmDataContext);
   const buttonWidth = isMobile ? 12 : 3;
 
   const handlePlay = (e) => {
     e.preventDefault();
-    console.log(duration, sustainVolume);
+    console.log(duration, sustainVolume, formula);
   };
 
   return (

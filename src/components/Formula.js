@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Grid, TextField, Typography, useMediaQuery } from '@material-ui/core';
 import { styled, useTheme } from '@material-ui/core/styles';
+import { PcmDataContext } from '@/context/PcmDataContext';
 import content from 'utils/content';
 
 const FormulaContainer = styled(Grid)(
@@ -27,6 +28,7 @@ const FormulaInput = styled(TextField)(
 const Formula = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
+  const { DEFAULTS, setFormula } = useContext(PcmDataContext);
 
   return (
     <FormulaContainer
@@ -42,6 +44,8 @@ const Formula = () => {
         <FormulaInput
           type="text"
           variant="outlined"
+          defaultValue={DEFAULTS.formula}
+          onChange={(e) => setFormula(e.target.value)}
           inputProps={{ 'aria-label': content.formula.inputLabel }}
           fullWidth
           autoFocus
