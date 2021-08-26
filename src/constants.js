@@ -6,3 +6,5 @@ export const DEFAULTS = {
   release: 0.4,
   formula: '(c/64)<<(c*32)&(c*4)'
 };
+
+export const formulaRegex = /[^+\-/()><&|*c0-9]/g;

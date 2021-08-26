@@ -28,7 +28,7 @@ const FormulaInput = styled(TextField)(
 const Formula = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
-  const { DEFAULTS, setFormula } = useContext(PcmDataContext);
+  const { setFormula, formula } = useContext(PcmDataContext);
 
   return (
     <FormulaContainer
@@ -44,7 +44,7 @@ const Formula = () => {
         <FormulaInput
           type="text"
           variant="outlined"
-          defaultValue={DEFAULTS.formula}
+          value={formula}
           onChange={(e) => setFormula(e.target.value)}
           inputProps={{ 'aria-label': content.formula.inputLabel }}
           fullWidth

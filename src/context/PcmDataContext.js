@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { DEFAULTS } from '@/constants';
+import { DEFAULTS, formulaRegex } from '@/constants';
 
 export const PcmDataContext = createContext();
 
@@ -18,7 +18,7 @@ const PcmDataProvider = ({ children }) => {
   const [decay, setDecay] = useState(DEFAULTS.decay);
   const [sustain, setSustain] = useState(DEFAULTS.sustain);
   const [release, setRelease] = useState(DEFAULTS.release);
-  const [formula, setFormula] = useState(DEFAULTS.formula);
+  const [formula, _setFormula] = useState(DEFAULTS.formula);
 
   /**
    * Utility function to set ADSR duration values.
@@ -33,6 +33,11 @@ const PcmDataProvider = ({ children }) => {
     if (target === 'decay') return setDecay(validatedValue);
     if (target === 'sustain') return setSustain(validatedValue);
     if (target === 'release') return setRelease(validatedValue);
+  };
+
+  const setFormula = (value) => {
+    const filteredValue = value.replace(formulaRegex, '');
+    _setFormula(filteredValue);
   };
 
   const contextData = {
