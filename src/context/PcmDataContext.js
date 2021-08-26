@@ -6,7 +6,7 @@ export const PcmDataContext = createContext();
 /**
  * Validates duration input.
  */
-const validateValue = (input) => {
+const validateDuration = (input) => {
   const inputFloat = parseFloat(input);
   if (isNaN(inputFloat)) return null;
   return inputFloat >= 0 ? inputFloat : 0;
@@ -26,7 +26,7 @@ const PcmDataProvider = ({ children }) => {
    * @param {number|string} value The new state value to attempt to set.
    */
   const setDuration = (target, value) => {
-    const validatedValue = validateValue(value);
+    const validatedValue = validateDuration(value);
     if (validatedValue === null) return;
 
     if (target === 'attack') return setAttack(validatedValue);
