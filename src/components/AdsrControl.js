@@ -30,7 +30,7 @@ const AdsrInput = styled(Input)(
 
 const AdsrControl = ({ type }) => {
   const classes = useStyles();
-  const { DEFAULTS, setValues } = useContext(PcmDataContext);
+  const { DEFAULTS, setDuration } = useContext(PcmDataContext);
   const adsrContent = content.adsrDisplay;
 
   return (
@@ -46,7 +46,7 @@ const AdsrControl = ({ type }) => {
           className={classes.border}
           type="number"
           defaultValue={DEFAULTS[type]}
-          onChange={(e) => setValues(type, e.target.value)}
+          onChange={(e) => setDuration(type, e.target.value)}
         />
       </InputContainer>
     </>

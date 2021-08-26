@@ -3,5 +3,6 @@ export const DEFAULTS = {
   attack: 0.2,
   decay: 0.5,
   sustain: 2,
-  release: 0.4
+  release: 0.4,
+  formula: '(c/64)<<(c*32)&(c*4)'
 };

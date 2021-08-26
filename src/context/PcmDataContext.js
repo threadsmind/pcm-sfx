@@ -18,13 +18,14 @@ const PcmDataProvider = ({ children }) => {
   const [decay, setDecay] = useState(DEFAULTS.decay);
   const [sustain, setSustain] = useState(DEFAULTS.sustain);
   const [release, setRelease] = useState(DEFAULTS.release);
+  const [formula, setFormula] = useState(DEFAULTS.formula);
 
   /**
    * Utility function to set ADSR duration values.
    * @param {string} target The target's state token string.
    * @param {number|string} value The new state value to attempt to set.
    */
-  const setValues = (target, value) => {
+  const setDuration = (target, value) => {
     const validatedValue = validateValue(value);
     if (validatedValue === null) return;
 
@@ -43,7 +44,9 @@ const PcmDataProvider = ({ children }) => {
       sustain,
       release
     },
-    setValues,
+    setDuration,
+    formula,
+    setFormula,
     DEFAULTS
   };
 
